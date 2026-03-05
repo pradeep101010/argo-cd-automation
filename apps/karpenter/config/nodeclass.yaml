@@ -4,14 +4,13 @@ metadata:
   name: default
 spec:
   amiSelectorTerms:
-    - alias: al2@latest
+    - alias: al2023@latest
   role: KarpenterNodeRole
   subnetSelectorTerms:
-    - tags:
-        karpenter.sh/discovery: modmed-pod-cluster
+    - id: subnet-02aeb36b1eea04b17
+    - id: subnet-03ff18f97661f3125
   securityGroupSelectorTerms:
-    - tags:
-        karpenter.sh/discovery: modmed-pod-cluster
+    - id: sg-0a641298d83bf5fb3
   tags:
     managed-by: karpenter
     provisioned-by: argocd
