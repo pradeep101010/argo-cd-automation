@@ -19,8 +19,8 @@ spec:
           image: public.ecr.aws/eks-distro/kubernetes/pause:3.7
           resources:
             requests:
-              cpu: "1"
+              cpu: "6"
             limits:
-              cpu: "1"
+              cpu: "6"
       nodeSelector:
         karpenter.sh/nodepool: default
