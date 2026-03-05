@@ -1,36 +1,20 @@
-# apps/karpenter/Application.yaml
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: karpenter
+  name: karpenter-config
   namespace: argocd
   annotations:
-    argocd.argoproj.io/sync-wave: "1"    # install BEFORE nodeclass/nodepool
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   project: default
   source:
-    repoURL: public.ecr.aws/karpenter/karpenter
-    chart: karpenter
-    targetRevision: 1.0.0
-    helm:
-      values: |
-        serviceAccount:
-          annotations:
-            eks.amazonaws.com/role-arn: arn:aws:iam::853973692277:role/karpenter-20260304131229138200000013
-        settings:
-          clusterName: modmed-pod-cluster
-          clusterEndpoint: https://6BED286EA14EC856239A42E0FD75C0CA.gr7.us-east-1.eks.amazonaws.com
-        controller:
-          resources:
-            requests:
-              cpu: 1
-              memory: 1Gi
+    repoURL: https://github.com/pradeep101010/argo-cd-automation.git
+    targetRevision: main
+    path: apps/karpenter/config
   destination:
     server: https://kubernetes.default.svc
-    namespace: kube-system
+    namespace: default
   syncPolicy:
     automated:
       prune: true
       selfHeal: true
-    syncOptions:
-      - CreateNamespace=true
