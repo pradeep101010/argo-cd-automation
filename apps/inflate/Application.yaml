@@ -1,0 +1,21 @@
+# apps/inflate/Application.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: inflate
+  namespace: argocd
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"    # AFTER karpenter config is ready
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/pradeep101010/argo-cd-automation.git
+    targetRevision: main
+    path: apps/inflate
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

@@ -1,0 +1,14 @@
+apiVersion: karpenter.k8s.aws/v1
+kind: EC2NodeClass
+metadata:
+  name: default
+spec:
+  amiSelectorTerms:
+    - alias: al2023@latest
+  instanceProfile: modmedEKSDemoRoleforManagedNodes
+  subnetSelectorTerms:
+    - id: subnet-03ff18f97661f3125
+    - id: subnet-02aeb36b1eea04b17
+  securityGroupSelectorTerms:
+    - tags:
+        aws:eks:cluster-name: modmed-poc-cluster

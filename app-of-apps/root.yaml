@@ -1,0 +1,19 @@
+# app-of-apps/root.yaml
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: root
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/pradeep101010/argo-cd-automation.git
+    targetRevision: main
+    path: apps                        # watches everything under /apps
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: argocd
+  syncPolicy:
+    automated:
+      prune: true                     # deletes resources removed from Git
+      selfHeal: true                  # reverts manual kubectl edits
