@@ -9,7 +9,7 @@ spec:
         group: karpenter.k8s.aws
         kind: EC2NodeClass
         name: default
-      expireAfter: 5m
+      expireAfter: 10m
       requirements:
         - key: karpenter.sh/capacity-type
           operator: In
