@@ -1,9 +1,5 @@
-```
-
----
-
 ## The Full Flow End-to-End
-```
+
 Developer opens PR: replicas 10 → 20
           │
           │  PR merged to main
