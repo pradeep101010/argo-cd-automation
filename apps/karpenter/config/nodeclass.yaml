@@ -4,7 +4,7 @@ metadata:
   name: default
 spec:
   amiSelectorTerms:
-    - alias: al2023@20260216
+    - alias: al2023@latest
   role: modmedEKSDemoRoleforManagedNodes
   subnetSelectorTerms:
     - id: subnet-02aeb36b1eea04b17
