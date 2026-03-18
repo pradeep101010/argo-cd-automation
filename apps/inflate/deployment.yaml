@@ -5,7 +5,7 @@ metadata:
   name: inflate
   namespace: default
 spec:
-  replicas: 0
+  replicas: 4
   selector:
     matchLabels:
       app: inflate
