@@ -5,7 +5,7 @@ metadata:
 spec:
   amiFamily: AL2023          # top level, not inside amiSelectorTerms
   amiSelectorTerms:
-    - id: ami-03721f6a44c1efc0f   # just the id here
+    - id: ami-017049ddc19bc4ec6   # just the id here
   role: modmedEKSDemoRoleforManagedNodes
   subnetSelectorTerms:
     - id: subnet-02aeb36b1eea04b17
