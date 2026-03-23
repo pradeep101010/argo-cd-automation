@@ -3,9 +3,9 @@ kind: EC2NodeClass
 metadata:
   name: default
 spec:
-  amiFamily: AL2023          # top level, not inside amiSelectorTerms
+  amiFamily: AL2023          
   amiSelectorTerms:
-    - id: ami-03721f6a44c1efc0f   # just the id here
+    - id: ami-03721f6a44c1efc0f   
   role: modmedEKSDemoRoleforManagedNodes
   subnetSelectorTerms:
     - id: subnet-02aeb36b1eea04b17
